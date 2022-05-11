@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,10 +37,12 @@ public class ProductServiceImpl implements ProductService {
 
     ProductServiceImpl() {
         try {
-            this.inputStream = new FileInputStream("/Users/tiagosilva/Desktop/StorePromotion/src/main/java/com/example/StorePromotion/percistance/repositorys/products.json");
+            this.inputStream = new FileInputStream("src/main/java/com/example/StorePromotion/percistance/repositories/products.json");
             this.productsn = mapper.readValue(inputStream, typeReference);
+
         } catch (Exception e) {
             System.out.println(e);
         }
     }
+
 }

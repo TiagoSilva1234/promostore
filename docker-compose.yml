@@ -17,8 +17,6 @@ services:
     build:
       context: "./storepromotion"
       dockerfile: Dockerfile
-    environment: 
-      - "DB_URL=database:8082"
     ports:
       - 8081:8081
     networks:
